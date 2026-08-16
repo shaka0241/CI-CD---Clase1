@@ -13,11 +13,13 @@ jobs:
       - name: obtener el codigo del repositorio
         uses: actions/checkout@v4
 
-      - name: ejecutar un comando
-        run: echo "¡Hola desde GitHub Actions!"
+      - name: instalar node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "26"
 
-      - name: listar archivos
-        run: ls -la
+      - name: instalar dependencias
+        run: npm install
 
-      - name: ver version de node
-        run: node --version
+      - name: ejecutar tests
+        run: npm test
