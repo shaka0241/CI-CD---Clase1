@@ -1,0 +1,23 @@
+name: CI Básico Alberto Rojas
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  hola-mundo-Alberto-Rojas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: obtener el codigo del repositorio
+        uses: actions/checkout@v4
+
+      - name: ejecutar un comando
+        run: echo "¡Hola desde GitHub Actions!"
+
+      - name: listar archivos
+        run: ls -la
+
+      - name: ver version de node
+        run: node --version
